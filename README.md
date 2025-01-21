@@ -4,6 +4,8 @@ A little Single Page Application I made that simulates a package delivery system
 
 Created using Angular, Node.js, Express.js, MongoDB, SocketIO and Google clouds services such as Google Gemini, text to speech, Google Translate. 
 
+API Endpoints are also created to enable third-party applications to interact with the system.
+
 ## Setup 
 
 1. Run `npm install` in the root directory to install the necessary dependencies for the backend.
