@@ -1,37 +1,23 @@
-# Assignment3
+# Package Delivery System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+A little Single Page Application I made that simulates a package delivery system. The system allows users to create packages, assign them to a driver, and track the package's delivery status.
 
-## Development server
+Created using Angular, Node.js, Express.js, MongoDB, SocketIO and Google clouds services such as Google Gemini, text to speech, Google Translate. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Setup 
 
-## Code scaffolding
+1. Run `npm install` in the root directory to install the necessary dependencies for the backend.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Run `ng build` in the root directory to build the Angular project.
 
-## Build
+3. Run `ng serve` in the root directory to start the Angular server.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Google Export 
 
-## Running unit tests
+Need to run this command in order for Google Gemini and other services to work.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## Google Export
-
-
-local
+```
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/jordan_penguins/Documents/Monash/FIT2095/Assignment-3/backend/fit2095.json"
+```
 
-remove
-export GOOGLE_APPLICATION_CREDENTIALS="/home/jngg0145/assignment_folder/Assignment-3/backend/fit2095.json"
 
