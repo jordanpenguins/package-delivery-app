@@ -1,0 +1,89 @@
+<div class="container mt-5 pb-5 mb-5 mt-5">
+
+    <h2>Delete drivers</h2>
+
+    <div class="row" style="overflow-y: auto; height: 250px;">
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Driver ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Licence</th>
+                    <th>Is Active</th>
+                    <th>Created At</th>
+                    <th>Delete</th>
+                    <th>Packages</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (driver of drivers; track $index) {
+                <tr>
+                  <td>{{ driver._id }}</td>
+                  <td>{{ driver.driver_id }}</td>
+                  <td>{{ driver.driver_name | uppercase }}</td>
+                  <td>{{ driver.driver_department }}</td>
+                  <td>{{ driver.driver_licence }}</td>
+                  <td>{{ driver.driver_isActive ? 'Active' : 'Inactive' }}</td>
+                  <td>{{ driver.driver_createdAt}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="setDriverIdAndDelete(driver._id)">X</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" (click)="fetchDriverPackages(driver._id)">?</button>
+                  </td>
+                </tr>
+                }
+              </tbody>
+        </table>
+    </div>
+
+    @if (selectedDriverID) {
+      @if (noPackagesFound) {
+        <h1>No Packages Found</h1>
+      } @else {
+        <div class="row pt-3" style="overflow-y: auto; height: 250px;">
+          <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Weight</th>
+                    <th>Destination</th>
+                    <th>Description</th>
+                    <th>Created At</th>
+                    <th>is Allocated?</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (package of selectedDriverPackages; track $index) {
+                <tr>
+                  <td>{{ package._id }}</td>
+                  <td>{{ package.package_title }}</td>
+                  <td>{{ package.package_weight }}</td>
+                  <td>{{ package.package_destination }}</td>
+                  <td>{{ package.description }}</td>
+                  <td>{{ package.createdAt }}</td>
+                  <td>{{ package.isAllocated }}</td>
+                </tr>
+                }
+              </tbody>
+          </table>
+        </div>
+
+      }
+
+      
+        
+    } 
+
+
+    
+
+
+
+
+
+
+</div>

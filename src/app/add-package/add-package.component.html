@@ -1,0 +1,38 @@
+
+<div class="container mt-5 pt-3 pb-5 col-8 col-md-3">
+    <form id="contact-form" class="contact-form" (ngSubmit) = "addPackage()">
+        <div class="row mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required [(ngModel)] = "package.package_title">
+        </div>
+        <div class="row mb-3">
+            <label for="weight" class="form-label">Weight</label>
+            <input type="number" class="form-control" id="weight" name="weight" required [(ngModel)] = "package.package_weight">
+        </div>
+        <div class="row mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" class="form-control" name="description" [(ngModel)]="package.description"></textarea>
+
+        </div>
+        <div class="row mb-3">
+            <label for="destination" class="form-label">Destination</label>
+            <input type="text" class="form-control" id="destination" name="destination" required [(ngModel)] = "package.package_destination">
+        </div>
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="isAllocated" value="true" name="isAllocated" [(ngModel)] = "package.isAllocated">
+            <label class="form-check-label" for="isAllocated">Is Allocated?</label>
+        </div>
+        <div class="row mb-3">  
+            <label for="driver_id" class="form-label">Driver ID</label>
+            <select class="form-select" aria-label="Default select example" id="driver_id" name="driver_id" [(ngModel)] = "package.driver_id">
+                @for ( driver of drivers; track $index) { 
+                    <option [value] = "driver._id">{{ driver._id }} | {{ driver.driver_name }}</option>
+                }
+            </select>
+        </div>
+
+        <div class="row mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form> 
+</div>

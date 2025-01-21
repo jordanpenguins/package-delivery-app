@@ -1,0 +1,31 @@
+<div class="container  ">
+    <div class="row" style="overflow-y: auto; height: 250px;">
+        <table class="table table-responsive table-bordered">   
+            <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Count</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Insert</th>
+                    <td>{{ stats.insert}}</td>
+                </tr>
+                <tr>
+                    <th>Retrieve</th>
+                    <td>{{ stats.retrieve }}</td>
+                </tr>
+                <tr>
+                    <th>Update</th>
+                    <td>{{ stats.update }}</td>
+                </tr>
+                <tr>
+                    <th>Delete</th>
+                    <td>{{ stats.delete }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

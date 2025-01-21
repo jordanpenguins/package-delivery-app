@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <img src="/logo.jpg" class="" width="55" height="65">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                <li class="nav-item">
+                    <button class="nav-link active" aria-current="page" routerLink="/">Home</button>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="packageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Packages
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="packageDropdown">
+                        <li><a class="dropdown-item" routerLink="/list-package">List Package</a></li>
+                        <li><a class="dropdown-item" routerLink="/add-package">Add Package</a></li>
+                        <li><a class="dropdown-item" routerLink="/delete-package">Delete Package</a></li>
+                        <li><a class="dropdown-item" routerLink="/update-package">Update Package</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="driverDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Drivers
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="driverDropdown">
+                        <li><a class="dropdown-item" routerLink="/list-driver">List Drivers</a></li>
+                        <li><a class="dropdown-item" routerLink="/add-driver">Add Drivers</a></li>
+                        <li><a class="dropdown-item" routerLink="/delete-driver">Delete Drivers</a></li>
+                        <li><a class="dropdown-item" routerLink="/update-driver">Update Drivers</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="driverDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cloud Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="driverDropdown">
+                        <li><a class="dropdown-item" routerLink="/translate">Translate</a></li>
+                        <li><a class="dropdown-item" routerLink="/text-to-speech">Text to Speech</a></li>
+                        <li><a class="dropdown-item" routerLink="/generative-ai">Generative AI</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/statistics">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

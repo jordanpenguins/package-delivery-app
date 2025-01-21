@@ -1,0 +1,79 @@
+<div class="container mt-5 pb-3">
+
+    <h2>Delete packages</h2>
+
+    <div class="row" style="overflow-y: auto; height: 250px;">
+        <table class="table table-responsive table-bordered">   
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Package ID</th>
+                    <th>Title</th>
+                    <th>Weight</th>
+                    <th>Destination</th>
+                    <th>Description</th>
+                    <th>Is Allocated</th>
+                    <th>Driver ID</th>
+                    <th>Created At</th>
+                    <th>Delete</th>
+                    <th>Driver</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (package of packages; track $index) {
+                    <tr>
+                        <td>{{ package._id }}</td>
+                        <td>{{ package.package_id }}</td>
+                        <td>{{ package.package_title }}</td>
+                        <td>{{ package.package_weight | kgToG  }}</td>
+                        <td>{{ package.package_destination }}</td>
+                        <td>{{ package.description }}</td>
+                        <td>{{ package.isAllocated ? 'Allocated' : 'Unallocated' }}</td>
+                        <td>{{ package.driver_id }}</td>
+                        <td>{{ package.createdAt}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="setPackageIdAndDelete(package._id)">X</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="fetchDriver(package.driver_id)">?</button>
+                        </td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+
+    @if (selectedPackageID) {
+        @if (noDriverFound) {
+          <h1>No Packages Found</h1>
+        } @else {
+          <div class="row pt-3" style="overflow-y: auto; height: 250px;">
+            <table class="table table-responsive table-bordered">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Department</th>
+                      <th>Licence</th>
+                      <th>Is Active?</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @for (driver of selectedPackageDrivers; track $index) {
+                  <tr>
+                    <td>{{ driver.driver_name }}</td>
+                    <td>{{ driver.driver_department }}</td>
+                    <td>{{ driver.driver_licence }}</td>
+                    <td>{{ driver.driver_isActive }}</td>
+                  </tr>
+                  }
+                </tbody>
+            </table>
+          </div>
+  
+        }
+  
+        
+          
+       } 
+</div>

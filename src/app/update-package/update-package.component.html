@@ -1,0 +1,15 @@
+<div class="container mt-5 pt-5 pb-5">
+    <h2>Update Package Destination</h2>
+    <div class="mt-5 pt-3 mb-3 col-12 col-md-4">
+        <form (ngSubmit) = "updatePackage()">
+            <label for="package_id" class="form-label">Enter Package ID</label>
+            <input type="text" class="form-control" id="package_id" name="package_id" [(ngModel)] = "package.package_id">
+
+            <label for="package_destination" class="form-label">Enter New Destination</label>
+            <input type="text" class="form-control" id="package_destination" name="package_destination" [(ngModel)]="package.package_destination">
+            <button type="submit" class="btn btn-danger my-5">Update Package</button>
+        </form>
+    </div>
+</div>
+
+

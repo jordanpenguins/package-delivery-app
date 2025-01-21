@@ -1,0 +1,25 @@
+<div class="container mt-5 pb-3 col-8 col-md-3">
+    <h1> Sign up</h1>
+    <form id="contact-form" class="contact-form" (ngSubmit)="signup()">
+        <div class="row mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username" required>
+            <p>Ensure username is at least 6 alphanumeric characters</p>
+        </div>
+
+        <div class="row mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
+            <p>Ensure password is between 5 and 10 characters only </p>
+        </div>
+
+        <div class="row mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword" required>
+        </div>
+
+        <div class="row mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form> 
+</div>

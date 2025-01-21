@@ -1,0 +1,35 @@
+<div class="container mt-5 pt-5 pb-5">
+    <h2>Update Driver's licence and Department</h2>
+    <div class="mt-5 pt-3 mb-3 col-12 col-md-4">
+        <form (ngSubmit) = "updateDriver()">
+            <label for="driver_id" class="form-label">Enter Driver ID</label>
+            <input type="text" class="form-control" id="driver_id" name="driver_id" [(ngModel)] = "driver.id">
+
+            <label for="driver_licence" class="form-label">Enter New Licence</label>
+            <input type="text" class="form-control" id="driver_licence" name="driver_licence" [(ngModel)]="driver.driver_licence">
+
+            <label class="form-label">Department</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="department" id="departmentFood" value="food" required [(ngModel)]="driver.driver_department">
+                <label class="form-check-label" for="departmentFood">
+                    Food
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="department" id="departmentFurniture" value="furniture" required [(ngModel)]="driver.driver_department">
+                <label class="form-check-label" for="departmentFurniture">
+                    Furniture
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="department" id="departmentElectronic" value="electronic" required [(ngModel)]="driver.driver_department">
+                <label class="form-check-label" for="departmentElectronic">
+                    Electronic
+                </label>
+            </div>
+            
+            <button type="submit" class="btn btn-danger my-5">Update Driver</button>
+        </form>
+    </div>
+</div>
+

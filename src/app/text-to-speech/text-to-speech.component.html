@@ -1,0 +1,60 @@
+<div class = "container " >
+  <div class="row" style="overflow-y: auto; height: 250px;">
+    <table class="table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>Driver ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Licence</th>
+                <th>Speech</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (driver of drivers; track $index) {
+            <tr>
+              <td>{{ driver.driver_id }}</td>
+              <td>{{ driver.driver_name}}</td>
+              <td>{{ driver.driver_department }}</td>
+              <td>{{ driver.driver_licence }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="sendTextToSpeech(driver.driver_licence)">S</button>  
+              </td>
+            </tr>
+            }
+          </tbody>
+
+          
+    </table>
+
+    
+  
+</div>
+
+<div class = "row pt-3">
+  <div class="col-12">
+    <textarea class="form-control" [(ngModel)]="msg" placeholder="Enter text" disabled></textarea>
+</div>
+
+
+
+
+@if (msg) {
+    <div class="col-12">
+      <audio [src]="audioSrc" controls></audio>
+  </div>
+}
+
+
+
+
+
+
+
+  <!-- <input [(ngModel)]="msg" placeholder="Enter text" />
+  <button (click)="sendTextToSpeech()">Convert to Speech</button>
+  <audio [src]="audioSrc" controls></audio>
+  <p>{{ response }}</p> -->
+</div>
+
+

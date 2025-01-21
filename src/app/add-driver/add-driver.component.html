@@ -1,0 +1,47 @@
+<div class="container mt-5 pb-3 col-8 col-md-3">
+    <form id="contact-form" class="contact-form" (ngSubmit)="addDriver()">
+        <div class="row mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required minlength="3" maxlength="20" pattern=".{3,20}" [(ngModel)]="driver.driver_name">
+        </div>
+
+        <div class="row mb-3">
+            <label class="form-label">Department</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="department" id="departmentFood" value="food" required [(ngModel)]="driver.driver_department">
+                <label class="form-check-label" for="departmentFood">
+                    Food
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="department" id="departmentFurniture" value="furniture" required [(ngModel)]="driver.driver_department">
+                <label class="form-check-label" for="departmentFurniture">
+                    Furniture
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="department" id="departmentElectronic" value="electronic" required [(ngModel)]="driver.driver_department">
+                <label class="form-check-label" for="departmentElectronic">
+                    Electronic
+                </label>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <p>Please provide a 5-digit licence</p>
+            <label for="licence" class="form-label">Licence</label>
+            <input type="text" class="form-control" id="licence" name="licence" minlength="5" maxlength="5" pattern="\d{5}" required [(ngModel)]="driver.driver_licence">
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-check form-switch mb">
+                <input class="form-check-input" type="checkbox" role="switch" id="isActive" name="isActive" [(ngModel)]="driver.driver_isActive">
+                <label class="form-check-label" for="isActive">Is active?</label>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form> 
+</div>
